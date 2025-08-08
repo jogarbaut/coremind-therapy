@@ -1,61 +1,45 @@
+// src/components/sections/ServicesSection/ServicesSection.tsx
 import React from "react"
 import Section from "../../components/layout/Section"
-import { useServices } from "../../hooks/useServices"
-import Button from "../../components/ui/Button"
+
+interface Service {
+    id: number
+    title: string
+    duration?: string
+    description: string
+    notes?: string
+    is_featured: boolean
+}
 
 const ServicesSection: React.FC = () => {
-    const { services, loading, error } = useServices()
-
-    if (loading) {
-        return (
-            <Section id="services" background="white" padding="lg">
-                <div className="max-w-6xl mx-auto">
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-gray-900 mb-12 tracking-wide text-center">
-                        SERVICES
-                    </h2>
-                    <div className="flex justify-center">
-                        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gray-900"></div>
-                    </div>
-                </div>
-            </Section>
-        )
-    }
-
-    if (error) {
-        return (
-            <Section id="services" background="white" padding="lg">
-                <div className="max-w-6xl mx-auto text-center">
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-gray-900 mb-12 tracking-wide">
-                        SERVICES
-                    </h2>
-                    <p className="text-red-600 mb-4">
-                        Error loading services: {error}
-                    </p>
-                    <button
-                        onClick={() => window.location.reload()}
-                        className="bg-gray-900 text-white px-6 py-2 rounded-md hover:bg-gray-800 transition-colors"
-                    >
-                        Try Again
-                    </button>
-                </div>
-            </Section>
-        )
-    }
-
-    if (!services || !Array.isArray(services) || services.length === 0) {
-        return (
-            <Section id="services" background="white" padding="lg">
-                <div className="max-w-6xl mx-auto text-center">
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-gray-900 mb-12 tracking-wide">
-                        SERVICES
-                    </h2>
-                    <p className="text-gray-600">
-                        No services available at this time.
-                    </p>
-                </div>
-            </Section>
-        )
-    }
+    const services: Service[] = [
+        {
+            id: 1,
+            title: "FREE INITIAL PHONE CONSULTATION",
+            duration: "10-15 minutes",
+            description:
+                "Get started with a complimentary consultation to determine if we're the right fit for your needs.",
+            is_featured: true,
+        },
+        {
+            id: 2,
+            title: "INDIVIDUAL THERAPY",
+            duration: "50 minutes",
+            description:
+                "One-on-one therapy sessions focused on your unique needs and goals.",
+            notes: "Sessions are exclusively offered via telehealth at this time.",
+            is_featured: false,
+        },
+        {
+            id: 3,
+            title: "THERAPY FOR TEENS",
+            duration: "50 minutes",
+            description:
+                "Specialized therapy for teenagers navigating the challenges of adolescence.",
+            notes: "*Evening session times offered based on availability. Sessions are exclusively offered via telehealth at this time.",
+            is_featured: false,
+        },
+    ]
 
     return (
         <Section id="services" background="white" padding="lg">
@@ -67,45 +51,34 @@ const ServicesSection: React.FC = () => {
                     </h2>
 
                     <div className="space-y-8">
-                        {services.map((service) => {
-                            // In Strapi v5, data is flattened - no .attributes needed!
-                            const {
-                                title,
-                                duration,
-                                description,
-                                notes,
-                                is_featured,
-                            } = service
-
-                            return (
-                                <div
-                                    key={service.id}
-                                    className="border-b border-gray-200 pb-6"
-                                >
-                                    <h3 className="text-lg md:text-xl font-medium text-gray-900 mb-2">
-                                        {title}
-                                        {duration && (
-                                            <span className="font-normal text-gray-600 ml-2">
-                                                ({duration})
-                                            </span>
-                                        )}
-                                        {is_featured && (
-                                            <span className="ml-2 inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">
-                                                Featured
-                                            </span>
-                                        )}
-                                    </h3>
-                                    <p className="text-gray-700 leading-relaxed mb-2">
-                                        {description}
-                                    </p>
-                                    {notes && (
-                                        <p className="text-sm text-gray-600 italic">
-                                            {notes}
-                                        </p>
+                        {services.map((service) => (
+                            <div
+                                key={service.id}
+                                className="border-b border-gray-200 pb-6"
+                            >
+                                <h3 className="text-lg md:text-xl font-medium text-gray-900 mb-2">
+                                    {service.title}
+                                    {service.duration && (
+                                        <span className="font-normal text-gray-600 ml-2">
+                                            ({service.duration})
+                                        </span>
                                     )}
-                                </div>
-                            )
-                        })}
+                                    {service.is_featured && (
+                                        <span className="ml-2 inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">
+                                            Featured
+                                        </span>
+                                    )}
+                                </h3>
+                                <p className="text-gray-700 leading-relaxed mb-2">
+                                    {service.description}
+                                </p>
+                                {service.notes && (
+                                    <p className="text-sm text-gray-600 italic">
+                                        {service.notes}
+                                    </p>
+                                )}
+                            </div>
+                        ))}
                     </div>
 
                     {/* Call to Action */}
@@ -117,7 +90,7 @@ const ServicesSection: React.FC = () => {
                             Take the first step towards better mental health
                             with our free consultation.
                         </p>
-                        <Button
+                        <button
                             onClick={() =>
                                 document
                                     .getElementById("contact")
@@ -126,15 +99,15 @@ const ServicesSection: React.FC = () => {
                             className="bg-gray-900 text-white px-6 py-3 rounded-md hover:bg-gray-800 transition-colors"
                         >
                             Schedule Consultation
-                        </Button>
+                        </button>
                     </div>
                 </div>
 
                 {/* Image */}
                 <div className="order-first md:order-last">
                     <img
-                        src="/images/services-plant.jpg"
-                        alt="Green plant in a dark room"
+                        src="/images/therapy-chair.jpg"
+                        alt="Comfortable therapy chair in serene setting"
                         className="w-full h-auto rounded-lg"
                     />
                 </div>

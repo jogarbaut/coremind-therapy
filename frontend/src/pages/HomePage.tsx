@@ -1,31 +1,34 @@
+// src/pages/HomePage/HomePage.tsx - Updated with hardcoded data
+import React from "react"
 import Section from "../components/layout/Section"
-import Button from "../components/ui/Button"
 import FAQsSection from "./sections/FAQsSection"
 import ServicesSection from "./sections/ServicesSection"
-import SpecialtiesSection from "./sections/SpecialtiesSection"
-import { defaultSpecialties } from "./sections/SpecialtiesSection"
+import SpecialtiesSection, {
+    defaultSpecialties,
+} from "./sections/SpecialtiesSection"
 
-const HomePage = () => {
+const HomePage: React.FC = () => {
     return (
         <div>
             {/* HOME SECTION */}
             <Section
                 id="home"
-                background="cream"
+                background="white"
                 padding="lg"
                 className="min-h-screen flex items-center"
             >
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
-                    <div className="order-2">
+                    {/* Image First on Mobile */}
+                    <div className="order-1 md:order-2">
                         <img
                             src="/images/therapy-chair.jpg"
                             alt="Comfortable therapy chair in serene setting"
-                            className="w-full rounded-lg max-h-screen"
+                            className="w-full rounded-lg max-h-svh"
                         />
                     </div>
 
                     {/* Text Content */}
-                    <div className="order-1">
+                    <div className="order-2 md:order-1 text-center md:text-left">
                         {/* SVG Logo */}
                         <div className="mb-6 md:mb-8">
                             <img
@@ -48,10 +51,6 @@ const HomePage = () => {
 
                 {/* Intro Text */}
                 <div className="max-w-4xl mx-auto text-center mb-12">
-                    <p className="text-lg md:text-xl text-gray-700 leading-relaxed px-4 md:px-0 mb-8">
-                        Where you will find the courage to embrace what makes
-                        you <em>you</em>!!
-                    </p>
                     <p className="text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed mb-6 md:mb-8">
                         Life can be hard. We all get knocked down from time to
                         time, and sometimes it can feel incredibly difficult to
@@ -108,6 +107,18 @@ const HomePage = () => {
                             <p className="text-gray-600">PSY35169</p>
                         </div>
                     </div>
+                </div>
+
+                <div className="mt-16 text-center">
+                    <p className="text-base md:text-lg text-gray-700 leading-relaxed max-w-4xl mx-auto">
+                        As an Asian American woman, I get how hard it can be to
+                        reach out and ask for help. It takes courage and
+                        vulnerability to begin. But you do not have to do it
+                        alone. With me, therapy won't be about fixing symptoms —
+                        it will be about exploring what lies beneath them,
+                        honoring everything that makes you you, and helping you
+                        to discover your strengths so that you can thrive!
+                    </p>
                 </div>
 
                 {/* Education & Training - Stacked on Mobile */}
@@ -183,13 +194,13 @@ const HomePage = () => {
                 </div>
             </Section>
 
-            {/* SERVICES SECTION - Now using Strapi */}
+            {/* SERVICES SECTION - Now hardcoded */}
             <ServicesSection />
 
             {/* SPECIALTIES SECTION */}
             <SpecialtiesSection specialties={defaultSpecialties} />
 
-            {/* FAQS SECTION - Now using Strapi */}
+            {/* FAQS SECTION - Now hardcoded */}
             <FAQsSection />
 
             {/* CONTACT SECTION */}
@@ -289,12 +300,12 @@ const HomePage = () => {
                                 ></textarea>
                             </div>
 
-                            <Button
+                            <button
                                 type="submit"
                                 className="w-full bg-gray-900 text-white py-4 px-6 rounded-md hover:bg-gray-800 transition-colors text-lg"
                             >
                                 Send Message
-                            </Button>
+                            </button>
                         </form>
                     </div>
                 </div>
