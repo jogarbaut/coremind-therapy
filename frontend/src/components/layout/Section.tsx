@@ -1,22 +1,26 @@
 import type { ReactNode } from "react"
 
-interface SectionProps {
+interface Props {
+    id?: string
     children: ReactNode
     className?: string
+    containerClassName?: string
     background?: "white" | "gray" | "cream"
     padding?: "sm" | "md" | "lg" | "xl" | "none"
     maxWidth?: "sm" | "md" | "lg" | "xl" | "2xl" | "full"
-    id?: string
+    layout?: "default" | "twoCol"
 }
 
 const Section = ({
+    id,
     children,
     className = "",
+    containerClassName = "",
     background = "white",
     padding = "lg",
     maxWidth = "2xl",
-    id,
-}: SectionProps) => {
+    layout = "default",
+}: Props) => {
     const backgroundClasses: Record<typeof background, string> = {
         white: "bg-tahiti-vanilla",
         gray: "bg-sweet-cream",
@@ -40,12 +44,20 @@ const Section = ({
         full: "max-w-none",
     }
 
+    // Mobile design
+    const layoutClasses =
+        layout == "twoCol"
+            ? "grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12"
+            : ""
+
     return (
         <section
             id={id}
             className={`${backgroundClasses[background]} ${paddingClasses[padding]} ${className}`}
         >
-            <div className={`mx-auto ${maxWidthClasses[maxWidth]}`}>
+            <div
+                className={`mx-auto ${maxWidthClasses[maxWidth]} ${layoutClasses} ${containerClassName}`}
+            >
                 {children}
             </div>
         </section>

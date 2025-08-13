@@ -60,7 +60,7 @@ const Navigation = () => {
                             <button
                                 key={item.id}
                                 onClick={() => scrollToSection(item.id)}
-                                className={`text-sm font-medium tracking-wide transition-colors hover:text-gray-600 ${
+                                className={`text-sm font-medium tracking-wide transition-colors hover:text-gray-600 hover:cursor-pointer ${
                                     activeSection === item.id
                                         ? "text-gray-900 border-b-2 border-gray-900 pb-1"
                                         : "text-gray-700"

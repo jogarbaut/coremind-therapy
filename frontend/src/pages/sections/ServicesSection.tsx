@@ -1,5 +1,3 @@
-// src/components/sections/ServicesSection/ServicesSection.tsx
-import React from "react"
 import Section from "../../components/layout/Section"
 
 interface Service {
@@ -11,7 +9,7 @@ interface Service {
     is_featured: boolean
 }
 
-const ServicesSection: React.FC = () => {
+const ServicesSection = () => {
     const services: Service[] = [
         {
             id: 1,
@@ -50,62 +48,62 @@ const ServicesSection: React.FC = () => {
     ]
 
     return (
-        <Section id="services" background="white" padding="lg">
-            <div className="grid grid-cols-[3fr_2fr] gap-4 items-center max-w-6xl mx-auto">
-                {/* Services List */}
-                <div>
-                    <div className="mb-8">
-                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-gray-900 tracking-wide text-center md:text-left">
-                            SERVICES
-                        </h2>
-                        <p className="text-sm text-gray-600 italic">
-                            * Sessions are exclusively offered via telehealth at
-                            this time
-                        </p>
-                        <p className="text-sm text-gray-600 italic">
-                            * Evening session times offered based on
-                            availability
-                        </p>
-                    </div>
-
-                    <div className="space-y-4">
-                        {services.map((service) => (
-                            <div
-                                key={service.id}
-                                className="border-b border-gray-100 pb-6"
-                            >
-                                <h3 className="text-lg md:text-xl font-medium text-gray-900 mb-2">
-                                    {service.title}
-                                    {service.duration && (
-                                        <span className="font-normal text-gray-600 ml-2">
-                                            ({service.duration})
-                                        </span>
-                                    )}
-                                    {service.is_featured && (
-                                        <span className="ml-2 inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">
-                                            Featured
-                                        </span>
-                                    )}
-                                </h3>
-                                <p className="text-gray-700 leading-relaxed mb-2">
-                                    {service.description}
-                                </p>
-                                {service.notes && (
-                                    <p className="text-sm text-gray-600 italic">
-                                        {service.notes}
-                                    </p>
-                                )}
-                            </div>
-                        ))}
-                    </div>
+        <Section id="services" background="white" padding="lg" layout="twoCol">
+            {/* Services List */}
+            <div>
+                <div className="mb-8">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-gray-900 tracking-wide text-center md:text-left">
+                        SERVICES
+                    </h2>
+                    <p className="text-sm text-gray-600 italic mt-4">
+                        * Sessions are exclusively offered via telehealth at
+                        this time
+                    </p>
+                    <p className="text-sm text-gray-600 italic">
+                        * Evening session times offered based on availability
+                    </p>
                 </div>
 
-                {/* Image */}
-                <div className="">
+                <div className="space-y-2">
+                    {services.map((service) => (
+                        <div
+                            key={service.id}
+                            className="border-b border-gray-200 pb-4"
+                        >
+                            <h3 className="text-lg md:text-xl font-medium text-gray-900 mb-2">
+                                {service.title}
+                                {service.duration && (
+                                    <span className="font-normal text-gray-600 ml-2">
+                                        ({service.duration})
+                                    </span>
+                                )}
+                                {service.is_featured && (
+                                    <span className="ml-2 inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">
+                                        Featured
+                                    </span>
+                                )}
+                            </h3>
+                            <p className="text-gray-700 leading-relaxed mb-2">
+                                {service.description}
+                            </p>
+                            {service.notes && (
+                                <p className="text-sm text-gray-600 italic">
+                                    {service.notes}
+                                </p>
+                            )}
+                        </div>
+                    ))}
+                </div>
+            </div>
+
+            {/* Image */}
+            <div className="flex items-center justify-center text-center md:text-left">
+                <div className="w-full">
                     <img
                         src="/images/services-plant.jpg"
-                        alt="Comfortable therapy chair in serene setting"
-                        className="w-full h-auto"
+                        alt="CoreMind Therapy logo"
+                        className="w-full max-w-xs mx-auto h-auto"
+                        loading="lazy"
                     />
                 </div>
             </div>
