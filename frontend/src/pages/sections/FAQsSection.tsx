@@ -44,19 +44,29 @@ const FAQsSection: React.FC = () => {
 
     return (
         <Section id="faqs" background="white" padding="lg">
-            <div className="text-center mb-12 md:mb-16">
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-gray-900 tracking-wide">
-                    FAQ'S
-                </h2>
-            </div>
-
-            <div className="space-y-8 md:space-y-0 md:grid md:grid-cols-2 md:gap-12 items-start max-w-6xl mx-auto">
+            <div className="space-y-8 md:space-y-0 grid grid-cols-[1fr_4fr] gap-8 items-start max-w-6xl mx-auto">
                 {/* FAQs */}
-                <div className="space-y-8 md:space-y-12">
+
+                {/* Image - Hidden on mobile, shown on desktop */}
+                <div className="items-center flex">
+                    <div className="w-80 h-80 rounded-full overflow-hidden">
+                        <img
+                            src="/images/hands.jpg"
+                            alt="Hands holding coffee cup"
+                            className="w-full h-full object-cover"
+                        />
+                    </div>
+                </div>
+                <div className="space-y-2">
+                    <div className="text-center mb-4">
+                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-gray-900 tracking-wide">
+                            FAQ'S
+                        </h2>
+                    </div>
                     {faqs.map((faq) => (
                         <div
                             key={faq.id}
-                            className="border-b border-gray-200 pb-6"
+                            className="border-b border-gray-100 pb-4"
                         >
                             <h3 className="text-lg md:text-xl font-medium text-gray-900 mb-4 italic">
                                 {faq.question}
@@ -71,17 +81,6 @@ const FAQsSection: React.FC = () => {
                             </p>
                         </div>
                     ))}
-                </div>
-
-                {/* Image - Hidden on mobile, shown on desktop */}
-                <div className="hidden md:flex justify-center">
-                    <div className="w-80 h-80 rounded-full overflow-hidden">
-                        <img
-                            src="/images/hands.jpg"
-                            alt="Hands holding coffee cup"
-                            className="w-full h-full object-cover"
-                        />
-                    </div>
                 </div>
             </div>
         </Section>

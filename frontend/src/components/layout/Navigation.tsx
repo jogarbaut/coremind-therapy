@@ -10,8 +10,8 @@ const Navigation = () => {
     const navItems = [
         { id: "home", label: "HOME" },
         { id: "about", label: "ABOUT" },
-        { id: "services", label: "SERVICES" },
         { id: "specialties", label: "SPECIALTIES" },
+        { id: "services", label: "SERVICES" },
         { id: "faqs", label: "FAQS" },
         { id: "contact", label: "CONTACT" },
     ]
@@ -75,7 +75,7 @@ const Navigation = () => {
                         onClick={() => scrollToSection("home")}
                         className="text-xl md:text-2xl font-light text-gray-900 tracking-wide hover:text-gray-600 transition-colors"
                     >
-                        COREMIND
+                        COREMIND THERAPY
                     </button>
 
                     {/* Mobile Menu Button */}

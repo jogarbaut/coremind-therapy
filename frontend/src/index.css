@@ -1,1 +1,10 @@
 @import "tailwindcss";
+
+@theme {
+    --color-tahiti-vanilla: #f1f1ef;
+    --color-sweet-cream: #f1f1ef;
+}
+
+body {
+    font-family: "Cardo", sans-serif;
+}

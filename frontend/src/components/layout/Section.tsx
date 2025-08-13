@@ -4,7 +4,7 @@ interface SectionProps {
     children: ReactNode
     className?: string
     background?: "white" | "gray" | "cream"
-    padding?: "sm" | "md" | "lg" | "xl"
+    padding?: "sm" | "md" | "lg" | "xl" | "none"
     maxWidth?: "sm" | "md" | "lg" | "xl" | "2xl" | "full"
     id?: string
 }
@@ -18,8 +18,8 @@ const Section = ({
     id,
 }: SectionProps) => {
     const backgroundClasses: Record<typeof background, string> = {
-        white: "bg-white",
-        gray: "bg-gray-50",
+        white: "bg-tahiti-vanilla",
+        gray: "bg-sweet-cream",
         cream: "bg-orange-50",
     }
 
@@ -28,6 +28,7 @@ const Section = ({
         md: "py-12 px-4",
         lg: "py-16 px-4",
         xl: "py-24 px-4",
+        none: "px-0 py-0",
     }
 
     const maxWidthClasses: Record<typeof maxWidth, string> = {
