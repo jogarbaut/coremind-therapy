@@ -20,7 +20,7 @@ const SpecialtiesSection = ({
     specialties,
 }: SpecialtiesProps) => {
     return (
-        <Section background="cream" padding="xl" id="specialties">
+        <Section background="cream" padding="lg" id="specialties">
             <div className="text-center">
                 {/* Section Title */}
                 <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-16 tracking-wide">
@@ -28,7 +28,7 @@ const SpecialtiesSection = ({
                 </h2>
 
                 {/* Grid of circular images with labels */}
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 md:gap-12">
+                <div className="grid grid-cols-3 lg:grid-cols-5 gap-2 md:gap-4">
                     {specialties.map((specialty) => (
                         <div
                             key={specialty.id}
@@ -49,7 +49,7 @@ const SpecialtiesSection = ({
                                     {specialty.title}
                                 </h3>
                                 {specialty.subtitle && (
-                                    <p className="text-xs md:text-sm text-gray-600 mt-1">
+                                    <p className="text-sm md:text-base font-medium text-gray-900 leading-tight mt-1">
                                         {specialty.subtitle}
                                     </p>
                                 )}
@@ -64,12 +64,11 @@ const SpecialtiesSection = ({
 
 export default SpecialtiesSection
 
-// Sample data
 export const defaultSpecialties: Specialty[] = [
     {
         id: 1,
-        title: "Adjustment",
-        subtitle: "Stress Anxiety",
+        title: "Adjustment,",
+        subtitle: "Stress, Anxiety",
         image: "/images/specialties/adjustment.jpg",
         alt: "Person experiencing adjustment stress",
     },
@@ -82,22 +81,22 @@ export const defaultSpecialties: Specialty[] = [
     },
     {
         id: 3,
-        title: "Identity",
-        subtitle: "development",
+        title: "Identity,",
+        subtitle: "Development",
         image: "/images/specialties/identity.jpg",
         alt: "Person exploring identity",
     },
     {
         id: 4,
-        title: "Teens",
-        subtitle: "Young adults Adults",
+        title: "Teens,",
+        subtitle: "Young Adults, Adults",
         image: "/images/specialties/teens.jpg",
         alt: "Group of teenagers",
     },
     {
         id: 5,
         title: "Asian American",
-        subtitle: "mental health",
+        subtitle: "Mental Health",
         image: "/images/specialties/asian-american.jpg",
         alt: "Asian American mental health support",
     },

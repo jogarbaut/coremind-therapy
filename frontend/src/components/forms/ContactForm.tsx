@@ -135,7 +135,7 @@ export default function ContactForm() {
             <button
                 type="submit"
                 disabled={isSubmitting}
-                className={`w-full bg-gray-900 text-white py-4 px-6 rounded-md transition-colors text-lg
+                className={`w-full bg-gray-900 text-white py-4 px-6 rounded-md transition-colors text-lg hover:cursor-pointer
           ${
               isSubmitting
                   ? "opacity-60 cursor-not-allowed"

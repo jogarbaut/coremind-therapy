@@ -34,53 +34,42 @@ const FAQsSection: React.FC = () => {
             answer: "Yes, we do offer evening session times. Please inquire for availability.",
             category: "Sessions",
         },
-        {
-            id: 5,
-            question: "HOW FREQUENT ARE SESSIONS?",
-            answer: "Most clients start on a weekly schedule and transition to biweekly as they stabilize. Session frequency may also vary based on schedule and need.",
-            category: "Sessions",
-        },
     ]
 
     return (
-        <Section id="faqs" background="white" padding="lg">
-            <div className="space-y-8 md:space-y-0 grid grid-cols-1 md:grid-cols-[1fr_4fr] gap-8 items-start max-w-6xl mx-auto">
-                {/* FAQs */}
-
-                {/* Image - Hidden on mobile, shown on desktop */}
-                <div className="items-center flex">
-                    <div className="max-w-[250px] sm:max-w-[320px] aspect-square rounded-full overflow-hidden">
-                        <img
-                            src="/images/hands.jpg"
-                            alt="Hands holding coffee cup"
-                            className="w-full h-full object-cover"
-                        />
-                    </div>
+        <Section id="faqs" background="white" padding="lg" layout="twoCol">
+            {/* FAQs */}
+            <div className="space-y-2">
+                <div className="text-center mb-4">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-gray-900 tracking-wide">
+                        FAQ'S
+                    </h2>
                 </div>
-                <div className="space-y-2">
-                    <div className="text-center mb-4">
-                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-gray-900 tracking-wide">
-                            FAQ'S
-                        </h2>
+                {faqs.map((faq) => (
+                    <div key={faq.id} className="border-b border-gray-100 pb-4">
+                        <h3 className="text-lg md:text-xl font-medium text-gray-900 mb-4 italic">
+                            {faq.question}
+                            {faq.category && (
+                                <span className="ml-2 inline-block bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">
+                                    {faq.category}
+                                </span>
+                            )}
+                        </h3>
+                        <p className="text-sm md:text-base text-gray-700 leading-relaxed">
+                            {faq.answer}
+                        </p>
                     </div>
-                    {faqs.map((faq) => (
-                        <div
-                            key={faq.id}
-                            className="border-b border-gray-100 pb-4"
-                        >
-                            <h3 className="text-lg md:text-xl font-medium text-gray-900 mb-4 italic">
-                                {faq.question}
-                                {faq.category && (
-                                    <span className="ml-2 inline-block bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">
-                                        {faq.category}
-                                    </span>
-                                )}
-                            </h3>
-                            <p className="text-sm md:text-base text-gray-700 leading-relaxed">
-                                {faq.answer}
-                            </p>
-                        </div>
-                    ))}
+                ))}
+            </div>
+            {/* Image - Hidden on mobile, shown on desktop */}
+            <div className="flex items-center justify-center text-center md:text-left">
+                <div className="w-full">
+                    <img
+                        src="/images/hands.jpg"
+                        alt="Hands holding coffee cup"
+                        className="w-full max-w-xs mx-auto h-auto"
+                        loading="lazy"
+                    />
                 </div>
             </div>
         </Section>
