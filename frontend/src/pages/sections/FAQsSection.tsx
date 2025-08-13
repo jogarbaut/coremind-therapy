@@ -44,12 +44,12 @@ const FAQsSection: React.FC = () => {
 
     return (
         <Section id="faqs" background="white" padding="lg">
-            <div className="space-y-8 md:space-y-0 grid grid-cols-[1fr_4fr] gap-8 items-start max-w-6xl mx-auto">
+            <div className="space-y-8 md:space-y-0 grid grid-cols-1 md:grid-cols-[1fr_4fr] gap-8 items-start max-w-6xl mx-auto">
                 {/* FAQs */}
 
                 {/* Image - Hidden on mobile, shown on desktop */}
                 <div className="items-center flex">
-                    <div className="w-80 h-80 rounded-full overflow-hidden">
+                    <div className="max-w-[250px] sm:max-w-[320px] aspect-square rounded-full overflow-hidden">
                         <img
                             src="/images/hands.jpg"
                             alt="Hands holding coffee cup"
