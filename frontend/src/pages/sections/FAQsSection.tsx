@@ -39,6 +39,17 @@ const FAQsSection: React.FC = () => {
     return (
         <Section id="faqs" background="white" padding="lg" layout="twoCol">
             {/* FAQs */}
+            {/* Image - Hidden on mobile, shown on desktop */}
+            <div className="flex items-center justify-center text-center md:text-left">
+                <div className="w-full">
+                    <img
+                        src="/images/hands.jpg"
+                        alt="Hands holding coffee cup"
+                        className="w-full max-w-md mx-auto h-auto object-cover"
+                        loading="lazy"
+                    />
+                </div>
+            </div>
             <div className="space-y-2">
                 <div className="text-center mb-4">
                     <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-gray-900 tracking-wide">
@@ -46,7 +57,10 @@ const FAQsSection: React.FC = () => {
                     </h2>
                 </div>
                 {faqs.map((faq) => (
-                    <div key={faq.id} className="border-b border-gray-100 pb-4">
+                    <div
+                        key={faq.id}
+                        className="border-b border-gray-100 pb-4 md:mr-12"
+                    >
                         <h3 className="text-lg md:text-xl font-medium text-gray-900 mb-4 italic">
                             {faq.question}
                             {faq.category && (
@@ -60,17 +74,6 @@ const FAQsSection: React.FC = () => {
                         </p>
                     </div>
                 ))}
-            </div>
-            {/* Image - Hidden on mobile, shown on desktop */}
-            <div className="flex items-center justify-center text-center md:text-left">
-                <div className="w-full">
-                    <img
-                        src="/images/hands.jpg"
-                        alt="Hands holding coffee cup"
-                        className="w-full max-w-xs mx-auto h-auto"
-                        loading="lazy"
-                    />
-                </div>
             </div>
         </Section>
     )

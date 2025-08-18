@@ -55,9 +55,10 @@ const EducationTrainingSection = () => {
                         </li>
                         <li>
                             Behavioral Health Trainee — Child & Adolescent Track
-                        </li>
-                        <li>
-                            Asian Americans for Community Involvement (AACI)
+                            <br />
+                            <span className="text-gray-600">
+                                Asian Americans for Community Involvement (AACI)
+                            </span>
                         </li>
                         <li>
                             Mental Health Trainee

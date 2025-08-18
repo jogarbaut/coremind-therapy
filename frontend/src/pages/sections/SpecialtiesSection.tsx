@@ -20,7 +20,7 @@ const SpecialtiesSection = ({
     specialties,
 }: SpecialtiesProps) => {
     return (
-        <Section background="cream" padding="lg" id="specialties">
+        <Section className="bg-white" padding="lg" id="specialties">
             <div className="text-center">
                 {/* Section Title */}
                 <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-16 tracking-wide">
@@ -81,14 +81,13 @@ export const defaultSpecialties: Specialty[] = [
     },
     {
         id: 3,
-        title: "Identity,",
-        subtitle: "Development",
+        title: "Identity Development",
         image: "/images/specialties/identity.jpg",
         alt: "Person exploring identity",
     },
     {
         id: 4,
-        title: "Teens,",
+        title: "Teens, ",
         subtitle: "Young Adults, Adults",
         image: "/images/specialties/teens.jpg",
         alt: "Group of teenagers",

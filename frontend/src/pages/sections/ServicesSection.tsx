@@ -48,11 +48,17 @@ const ServicesSection = () => {
     ]
 
     return (
-        <Section id="services" background="white" padding="lg" layout="twoCol">
+        <Section
+            id="services"
+            background="white"
+            padding="lg"
+            layout="twoCol"
+            containerClassName="max-w-2xl mx-auto items-start"
+        >
             {/* Services List */}
-            <div>
+            <div className="md:pl-12">
                 <div className="mb-8">
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-gray-900 tracking-wide text-center md:text-left">
+                    <h2 className="text-3xl font-light text-gray-900 mb-6 md:mb-8 tracking-wide text-center">
                         SERVICES
                     </h2>
                     <p className="text-sm text-gray-600 italic mt-4">
@@ -102,7 +108,7 @@ const ServicesSection = () => {
                     <img
                         src="/images/services-plant.jpg"
                         alt="CoreMind Therapy logo"
-                        className="w-full max-w-xs mx-auto h-auto"
+                        className="w-full max-w-md mx-auto h-auto object-cover"
                         loading="lazy"
                     />
                 </div>

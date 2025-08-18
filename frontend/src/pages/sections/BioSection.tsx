@@ -15,16 +15,16 @@ const BioSection = () => {
                     <p className="text-lg font-light text-gray-900">
                         Kaylin Jones, PhD
                     </p>
-                    <p className="text-gray-600 italic mb-1">She/her</p>
+                    <p className="text-gray-600 italic mb-1">she/her</p>
                     <p className="text-gray-600">PSY35169</p>
                 </div>
             </div>
 
             <div>
                 <p className="text-base md:text-lg text-gray-700 leading-relaxed mb-6">
-                    Welcome! It is such an honor to support you on your mental
-                    health journey! I am a licensed clinical psychologist who
-                    works with a variety of concerns, including anxiety/stress,
+                    It is such an honor to support you on your mental health
+                    journey! I am a licensed clinical psychologist who works
+                    with a variety of concerns, including anxiety/stress,
                     depression, relationship challenges, identity concerns,
                     trauma, perfectionism, academic struggles, burnout, and
                     more.
@@ -32,27 +32,25 @@ const BioSection = () => {
                 <p className="text-base md:text-lg text-gray-700 leading-relaxed mb-6">
                     Though I work with individuals across the lifespan, I am
                     particularly passionate about working with teens and young
-                    adults. As if life weren't hard enough, so many changes and
-                    transitions happen during this time that can easily make
-                    your world feel like it's spinning out of control. If you're
-                    looking for a safe space to discover and express yourself
-                    while also building a strong foundation for your future,
-                    you're in the right place.
+                    adults. As if life weren't hard enough, so much goes on
+                    during this time that can easily make your world feel like
+                    it's spinning out of control. If you're looking for a safe
+                    space to discover and express yourself while also building a
+                    strong foundation for your future, you're in the right
+                    place.
                 </p>
                 <p className="text-base md:text-lg text-gray-700 leading-relaxed">
                     As an Asian American woman, I get how hard it can be to
-                    reach out and ask for help. I commend you for your courage
-                    and vulnerability to show up. With me, therapy won't be
-                    about fixing symptoms — it will be about exploring what is
-                    beneath them, honoring everything that makes you, you, and
-                    helping you to discover your strengths so that you can
-                    thrive! Your story — your background, your beliefs, your
-                    struggles — matters. I am devoted to meeting you where you
-                    are and listening with empathy and respect. Whether you're
-                    dealing with life transitions, family pressure,
-                    perfectionism, relationship struggles, past traumas, or just
-                    wanting to develop more self-awareness, this is a place that
-                    sees you and accepts you.
+                    reach out and ask for help. With me, therapy isn't be about
+                    fixing symptoms — it's about exploring what is beneath them,
+                    honoring everything that makes you,{" "}
+                    <span className="italic">you</span>, and helping you to
+                    discover your strengths so that you can thrive! Your story —
+                    your background, your beliefs, your struggles — matters.
+                    Whether you're dealing with life transitions, interpersonal
+                    issues, perfectionism, past traumas, or just wanting to
+                    develop more self-awareness, this is a place that supports
+                    you.
                 </p>
             </div>
         </div>
