@@ -10,12 +10,9 @@ const ContactSection = () => {
                 </h2>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
-                <div className="text-center md:text-left">
-                    <h3 className="text-xl md:text-2xl font-light text-gray-900 mb-6">
-                        Get Started
-                    </h3>
-                    <p className="mt-3 text-gray-700">
+            <div className="max-w-2xl mx-auto">
+                <div className="text-center md:text-left my-6">
+                    <p className="mt-3 text-gray-700 text-center">
                         Ready to take the first step? We offer a free 15-minute
                         initial phone consultation to help you get started and
                         determine if we're the right fit for your needs.

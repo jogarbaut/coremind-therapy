@@ -35,8 +35,8 @@ const HomePage = () => {
             <HeroSection />
             <AboutSection />
             <BioSection />
-            <TreatmentApproachesSection />
             <SpecialtiesSection specialties={defaultSpecialties} />
+            <TreatmentApproachesSection />
             <EducationTrainingSection />
             <ServicesSection />
             <FAQsSection />
